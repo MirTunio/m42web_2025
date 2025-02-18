@@ -33,7 +33,7 @@ Our commitment is to deploy our own capital in a controlled and responsible mann
 
 
 
-## **We're Looking to Connect**
+## **Let's Connect**
 
 Whether you're a broker, asset manager, trading app, advisory fund, government organization, or a driven individual looking to work with us, we’re eager to explore opportunities together. Let’s discuss how **Mach 42 can revolutionize your approach** to trading, execution, and market efficiency. Reach out to start the conversation.
 
