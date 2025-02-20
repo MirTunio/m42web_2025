@@ -5,7 +5,7 @@ title: Home
 
 ## Background
 
-Mach 42 is a research-driven trading technology firm, founded in 2019 to tackle the lack of automated trading infrastructure at PSX. Led by Murtaza Tunio, a UC Berkeley Physics graduate with experience in experimental research and quantitative trading, we specialize in building end-to-end trading systems. Our expertise spans trading signal generation, order management systems (OMS), risk management systems (RMS), and FIX Layer execution.
+Mach 42 is a research-driven trading technology firm, founded in 2019 to tackle the lack of automated trading infrastructure at the PSX. Led by Murtaza Tunio, a UC Berkeley Physics graduate with experience in experimental research and quantitative trading, we specialize in building end-to-end trading systems. Our expertise spans trading signal generation, order management systems (OMS), risk management systems (RMS), and FIX Layer execution.
 
 
 
