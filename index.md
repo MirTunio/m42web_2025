@@ -13,7 +13,7 @@ Mach 42 is a research-driven trading technology firm, founded in 2019 to tackle 
 
 We are developing a next-generation quantitative trading platform—designed from the ground up for high-performance execution, real-time portfolio monitoring, and intelligent order handling. Our current focus is rigorous system development, sandbox testing, and algorithm design. While we are not yet live trading, our infrastructure is built to evolve into a full-scale, algorithmic trading and execution platform. In the future, we aim to offer execution services that optimize liquidity, enhance order flow, and improve price discovery, alongside trading our proprietary strategies.
 
-
+<iframe src="https://openprocessing.org/sketch/2043738/embed/?plusEmbedHash=b7480dcc&userID=152317&plusEmbedFullscreen=true&show=sketch" width="300" height="300" style="border: none;"></iframe>
 
 ## Where We're Heading
 
