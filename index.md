@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "Mach 42"
 ---
 
 ## Background
