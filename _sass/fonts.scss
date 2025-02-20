@@ -1,28 +1,40 @@
 @font-face {
-  font-family: 'Consolas';
+  font-family: 'Fira Code';
   font-weight: 400;
   font-style: normal;
+  src: url('../fonts/FiraCode-Regular.woff2') format('woff2'),
+       url('../fonts/FiraCode-Regular.woff') format('woff'),
+       url('../fonts/FiraCode-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Consolas';
+  font-family: 'Fira Code';
   font-weight: 700;
   font-style: normal;
+  src: url('../fonts/FiraCode-Bold.woff2') format('woff2'),
+       url('../fonts/FiraCode-Bold.woff') format('woff'),
+       url('../fonts/FiraCode-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Consolas';
+  font-family: 'Fira Code';
   font-weight: 400;
   font-style: italic;
+  src: url('../fonts/FiraCode-Italic.woff2') format('woff2'),
+       url('../fonts/FiraCode-Italic.woff') format('woff'),
+       url('../fonts/FiraCode-Italic.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Consolas';
+  font-family: 'Fira Code';
   font-weight: 700;
   font-style: italic;
+  src: url('../fonts/FiraCode-BoldItalic.woff2') format('woff2'),
+       url('../fonts/FiraCode-BoldItalic.woff') format('woff'),
+       url('../fonts/FiraCode-BoldItalic.ttf') format('truetype');
 }
 
-/* Apply Consolas globally */
+/* Apply Fira Code globally */
 body {
-  font-family: 'Consolas', monospace;
+  font-family: 'Fira Code', monospace;
 }
