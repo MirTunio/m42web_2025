@@ -31,7 +31,7 @@ _It's not a question of if, but when..._
 Our commitment is to deploy our own capital in a controlled and responsible manner, ensuring that our systems and strategies are not only profitable but also contribute positively to the market. Through rigorous research, thoughtful execution, and long-term dedication, we are paving the way for a more efficient, transparent, and sophisticated trading landscape in developing markets. 
 
 <div style="text-align:center"> 
-    <iframe src="https://openprocessing.org/sketch/2554156/embed/?plusEmbedHash=d4829e84&userID=152317&plusEmbedFullscreen=true&show=sketch" width="300" height="300"></iframe>
+    <iframe src="https://openprocessing.org/sketch/2554156/embed/?plusEmbedHash=d4829e84&userID=152317&plusEmbedFullscreen=true&show=sketch" width="300" height="300" style="border: none;></iframe>
 </div>
 
 ## **Let's Connect**
