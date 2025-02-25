@@ -45,7 +45,8 @@ function preload() {
 
 function setup() {
   mindim = min(windowWidth, windowHeight);
-  createCanvas(mindim - mindim/4, mindim - mindim/4);
+  let cnv = createCanvas(mindim - mindim/4, mindim - mindim/4);
+  cnv.parent('p5-container'); 
   background(0);
   frameRate(60);
   string_1 = get_new_string(num_points, 123123123, 0.0);
