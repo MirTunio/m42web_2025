@@ -39,7 +39,7 @@ function preload() {
 }
 
 function setup() {
-  let cnv = createCanvas(300, 300);
+  let cnv = createCanvas(250, 250);
   cnv.parent('p5-container'); 
   background(0);
   frameRate(60);
