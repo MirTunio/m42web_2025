@@ -14,11 +14,6 @@
 // Because every moment is unique and ephermal
 // The 24 7 365 cycle is only a stubbornly persistant illusion
 
-// EXPLAINER: A bunch of stills different times, and diff days same time
-// AND same times and days different years
-// And a morphing timeline that flexes into the x axis
-// DO THAT animorphs kind of thing
-
 
 let newbg_r = 0;
 let newbg_g = 0;
@@ -44,7 +39,7 @@ function preload() {
 }
 
 function setup() {
-  let cnv = createCanvas(350, 350);
+  let cnv = createCanvas(300, 300);
   cnv.parent('p5-container'); 
   background(0);
   frameRate(60);

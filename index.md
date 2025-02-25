@@ -28,15 +28,12 @@ The next phase for Mach 42 involves refining and validating our algorithms, stre
 
 Our vision is to transform trading in emerging markets by integrating cutting-edge quantitative research with robust infrastructure. Through rigorous research, continuous iteration, and responsible deployment we ensure that our systems and strategies are not only profitable but also contribute positively to the market as a whole, from institutions to retail investors.
 
-<div style="text-align:center"> 
-    <iframe src="https://openprocessing.org/sketch/2554156/embed/?plusEmbedHash=d4829e84&userID=152317&plusEmbedFullscreen=true&show=sketch" width="300" height="300" style="border: none;"></iframe>
-<br>
-</div>
 <div id="p5-container" style="width: 350; height: 350; text-align:center;"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
     <script src="mySketch.js"></script>
 </div>
+
 
 ## **Let's Connect**
 
