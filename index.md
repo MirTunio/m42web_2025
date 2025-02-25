@@ -39,3 +39,5 @@ Whether you're on the sell-side or buy-side, government institution, or a driven
 
 [> connect with M42 <](./connect.html)
 
+[> viz test <](./viz.html)
+
