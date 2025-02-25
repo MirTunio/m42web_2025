@@ -44,11 +44,7 @@ function preload() {
 }
 
 function setup() {
-  var myDiv = document.getElementById('p5-container');
-  var this_w = myDiv.style.width;
-  var this_h = myDiv.style.width;
-  mindim = min(this_w, this_h);
-  let cnv = createCanvas(mindim - mindim/4, mindim - mindim/4);
+  let cnv = createCanvas(350, 350);
   cnv.parent('p5-container'); 
   background(0);
   frameRate(60);
