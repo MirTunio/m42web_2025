@@ -44,7 +44,7 @@ function preload() {
 }
 
 function setup() {
-  var myDiv = select('p5-container');
+  var myDiv = document.getElementById('p5-container');
   var this_w = myDiv.style.width;
   var this_h = myDiv.style.width;
   mindim = min(this_w, this_h);
