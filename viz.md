@@ -1,5 +1,5 @@
 ---
-layout: viz
+layout: default
 title: contact
 ---
 
