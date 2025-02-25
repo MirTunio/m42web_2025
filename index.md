@@ -33,8 +33,6 @@ Our vision is to transform trading in emerging markets by integrating cutting-ed
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
     <script src="mySketch.js"></script>
 </div>
-<br>
-
 
 
 
