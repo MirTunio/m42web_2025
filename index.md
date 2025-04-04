@@ -7,7 +7,7 @@ title: Home
 
 Mach 42 is a research-driven trading technology firm, founded in 2019 to tackle the lack of automated trading infrastructure at the PSX. We specialize in developing quantitative trading strategies, and building end-to-end trading systems to support them. Our expertise spans trading signal generation, order management systems (OMS), risk management systems (RMS), and FIX Layer order execution.
 
-<iframe src="depth_plot_tly.html" width="800px" height="500px"></iframe>
+
 
 ## What We Do
 
