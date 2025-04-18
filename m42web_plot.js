@@ -16,24 +16,24 @@ let sketch2 = (p) => {
   };
 
   p.draw = function() {
-  background(255);
+  p.background(255);
   price = generatePrice(t);
 
   if (frameCount % 2 === 0) {
     updateData(price);
   }
 
-  push();
-  translate(0, movingAverage(prices, 10));
+  p.push();
+  p.translate(0, movingAverage(prices, 10));
   drawChart(prices);
-  pop();
+  p.pop();
 
   drawFraming();
   t++;
 }
 
 function generatePrice(time) {
-  return basePrice + height * floor((noise(time * 0.08) - 0.5) * 100) * 0.012;
+  return basePrice + p.height * floor((noise(time * 0.08) - 0.5) * 100) * 0.012;
 }
 
 function updateData(newPrice) {
@@ -48,16 +48,16 @@ function updateData(newPrice) {
 }
 
 function drawFraming() {
-  noFill();
-  stroke(0);
-  strokeWeight(3);
-  rect(2, 2, width - 4, height - 4, 15);
-  erase();
-  strokeWeight(4);
-  stroke(255, 0, 0);
-  rect(-1, -1, width + 2, height + 2, 16.5);
-  rect(-2, -2, width + 4, height + 4, 11);
-  noErase();
+  p.noFill();
+  p.stroke(0);
+  p.strokeWeight(3);
+  p.rect(2, 2, p.width - 4, p.height - 4, 15);
+  p.erase();
+  p.strokeWeight(4);
+  p.stroke(255, 0, 0);
+  p.rect(-1, -1, p.width + 2, p.height + 2, 16.5);
+  p.rect(-2, -2, p.width + 4, p.height + 4, 11);
+  p.noErase();
 }
 
 function drawChart(data) {
@@ -71,40 +71,40 @@ function drawChart(data) {
     return;
   }
   
-  const last_p = -data[len - 1] + height / 2;
-  const second_last_p = -data[len - 2] + height / 2;
+  const last_p = -data[len - 1] + p.height / 2;
+  const second_last_p = -data[len - 2] + p.height / 2;
   draw_lob(len * 10, last_p, second_last_p);
   const [spread, upper, lower] = get_spread(last_p, lob);
 
   for (let i = 0; i < lob_hist.length; i++) {
-    just_draw_lob(lob_hist[i], i * 10, -data[i - 1] + height / 2, -data[i - 2] + height / 2);
+    just_draw_lob(lob_hist[i], i * 10, -data[i - 1] + p.height / 2, -data[i - 2] + p.height / 2);
   }
 
   drawLabels(data, len, y_move, spread, upper, lower);
 }
 
 function drawPriceLine(data) {
-  stroke(0);
-  strokeWeight(2);
-  noFill();
-  beginShape();
+  p.stroke(0);
+  p.strokeWeight(2);
+  p.noFill();
+  p.beginShape();
   for (let i = 0; i < data.length; i++) {
-    const y = -data[i] + height / 2;
-    vertex((i - 1) * 10, y);
-    vertex(i * 10, y);
+    const y = -data[i] + p.height / 2;
+    p.vertex((i - 1) * 10, y);
+    p.vertex(i * 10, y);
   }
-  endShape();
+  p.endShape();
 }
 
 function drawGrid(data) {
-  strokeWeight(0.1);
-  stroke(50);
+  p.strokeWeight(0.1);
+  p.stroke(50);
   const len = data.length + 10;
   for (let i = 0; i < len; i++) {
-    line(i * 10, -height * 4, i * 10, height * 4);
+    p.line(i * 10, -p.height * 4, i * 10, p.height * 4);
   }
   for (let d of data) {
-    line(0, -d + height / 2, width, -d + height / 2);
+    p.line(0, -d + p.height / 2, p.width, -d + p.height / 2);
   }
 }
 
@@ -114,58 +114,58 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
   const spread_str = nf(spread, 1, 2);
   const pred_y = draw_predict(t, (len - 1) * 10);
 
-  textSize(16);
-  strokeWeight(0.5);
-  stroke(50);
-  fill(50);
+  p.textSize(16);
+  p.strokeWeight(0.5);
+  p.stroke(50);
+  p.fill(50);
   price_y_move = movingAverage(prices, 8);
-  line((len - 1) * 10 + 45, -price_y_move + height / 2 - 10, (len - 1) * 10 + 5, -raw_price + height / 2);
-  text(price_str, (len - 1) * 10 + 50, -price_y_move + height / 2 - 10);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 - 10, (len - 1) * 10 + 5, -raw_price + p.height / 2);
+  p.text(price_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 - 10);
 
-  textSize(16);
-  strokeWeight(0.5);
-  stroke(0, 0, 180);
-  fill(0, 0, 180);
-  line((len - 1) * 10 + 45, -price_y_move + height / 2 + 15, (len - 1) * 10 + 13, (lower + upper) / 2);
-  text(spread_str, (len - 1) * 10 + 50, -price_y_move + height / 2 + 15);
-  noFill();
+  p.textSize(16);
+  p.strokeWeight(0.5);
+  p.stroke(0, 0, 180);
+  p.fill(0, 0, 180);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 15, (len - 1) * 10 + 13, (lower + upper) / 2);
+  p.text(spread_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 15);
+  p.noFill();
   drawCurlyBracket((len - 1) * 10 + 5, upper, lower, 'right');
 
   // pred
   const pred_str = nf(100 + pred_y / 100, 1, 2); //nf(100 + pred_y / 100, 1, 2);
   pred_tween = ( 3 * pred_y + y_move) / 4 ;
   
-  textSize(16);
-  strokeWeight(0.5);
-  stroke(209, 128, 12);
-  fill(209, 128, 12);
-  line((len - 1) * 10 + 45, -price_y_move + height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
-  text(pred_str, (len - 1) * 10 + 50, -price_y_move + height / 2 + 40);
+  p.textSize(16);
+  p.strokeWeight(0.5);
+  p.stroke(209, 128, 12);
+  p.fill(209, 128, 12);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
+  p.text(pred_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 40);
   
-  //line((len - 1) * 10 + 45, -y_move + height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
-  //text(pred_str, (len - 1) * 10 + 50, -y_move + height / 2 + 40);
+  //line((len - 1) * 10 + 45, -y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
+  //text(pred_str, (len - 1) * 10 + 50, -y_move + p.height / 2 + 40);
   
   //line((len - 1) * 10 + 45, pred_tween - 6, (len - 1) * 10 + 12, pred_y - 6);
-  //text(pred_str, (len - 1) * 10 + 50, pred_tween - 6); //-y_move + height / 2 + 40);
+  //text(pred_str, (len - 1) * 10 + 50, pred_tween - 6); //-y_move + p.height / 2 + 40);
 }
 
 function draw_predict(t, xx) {
   const pred_len = 20;
   const y_preds = Array.from({ length: pred_len }, (_, i) => generatePrice(t + i));
   const y_p = movingAverage(y_preds, pred_len);
-  const y = -y_p + height / 2;
+  const y = -y_p + p.height / 2;
   const x = xx + 6;
 
-  textSize(24);
-  noStroke();
-  fill(209, 128, 12);
-  text("<", x, y);
+  p.textSize(24);
+  p.noStroke();
+  p.fill(209, 128, 12);
+  p.text("<", x, y);
   return y;
 }
 
 function draw_lob(last_t, last_p, second_last_p) {
-  strokeWeight(5);
-  strokeCap(SQUARE);
+  p.strokeWeight(5);
+  p.strokeCap(SQUARE);
   const order_guess = floor(random(-20, 20));
   lob.push(last_p + order_guess * 5);
   if (lob.length > max_lob) lob.shift();
@@ -174,19 +174,19 @@ function draw_lob(last_t, last_p, second_last_p) {
   lob = lob.filter(p => p < lower || p > upper);
 
   for (let p of lob) {
-    stroke(p < last_p ? color(0, 85, 0, 120) : color(85, 0, 0, 120));
-    line(last_t - 20, p, last_t - 10, p);
+    p.stroke(p < last_p ? color(0, 85, 0, 120) : color(85, 0, 0, 120));
+    p.line(last_t - 20, p, last_t - 10, p);
   }
 }
 
 function just_draw_lob(t_lob, last_t, last_p, second_last_p) {
-  strokeWeight(5);
-  strokeCap(SQUARE);
+  p.strokeWeight(5);
+  p.strokeCap(SQUARE);
   const [lower, upper] = [min(last_p, second_last_p) - 5, max(last_p, second_last_p) + 5];
 
   for (let p of t_lob.filter(p => p < lower || p > upper)) {
-    stroke(p < last_p ? color(0, 85, 0, 120) : color(85, 0, 0, 120));
-    line(last_t - 20, p, last_t - 10, p);
+    p.stroke(p < last_p ? color(0, 85, 0, 120) : color(85, 0, 0, 120));
+    p.line(last_t - 20, p, last_t - 10, p);
   }
 }
 

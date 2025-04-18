@@ -61,11 +61,11 @@ let sketch1 = (p) => {
   bg_r = bg_r + 0.15 * (newbg_r - bg_r);
   bg_g = bg_g + 0.15 * (newbg_g - bg_g);
   bg_b = bg_b + 0.15 * (newbg_b - bg_b);
-  noStroke();
-  fill(251, 230);
-  rect(0, 0, width, height);
-  fill(bg_r, bg_g, bg_b, 220); // 200
-  rect(0, 0, width, height, 15);
+  p.noStroke();
+  p.fill(251, 230);
+  p.rect(0, 0, p.width, p.height);
+  p.fill(bg_r, bg_g, bg_b, 220); // 200
+  p.rect(0, 0, p.width, p.height, 15);
 
   // draw strings
   string_1 = tween_string(string_1, new_string_1);
@@ -77,26 +77,26 @@ let sketch1 = (p) => {
   tprime += 100 * noise(cursec);
 
   // print time
-  textStyle(BOLD);
+  p.textStyle(BOLD);
   current_time = get_current_time();
   //show_full = format_time(get_full_time(current_time, 0), false); // just time
   show_full = format_time(get_full_time(current_time, 0), true); //  actually full date
 
-  noStroke();
-  textSize(width / 13);
-  fill(0);
-  textAlign(CENTER, BOTTOM);
-  text(show_full, width/2, height-8);
+  p.noStroke();
+  p.textSize(p.width / 13);
+  p.fill(0);
+  p.textAlign(CENTER, BOTTOM);
+  p.text(show_full, p.width/2, p.height-8);
 }
 
 function get_new_string(num_points, disp, mult) {
   out_string = [];
   rd = disp ;
 
-  ww = mult * width;
-  wadj = (ww-width)/2;
-  hh = mult * height;
-  hadj = (hh-height)/2;
+  ww = mult * p.width;
+  wadj = (ww-p.width)/2;
+  hh = mult * p.height;
+  hadj = (hh-p.height)/2;
 
   // starting vertex
   tx = ww * noise(rd + line_seed + -1 * 100) - wadj;
@@ -123,19 +123,19 @@ function get_new_string(num_points, disp, mult) {
 }
 
 function draw_string(ts, clr) {
-  stroke(clr, 225);
-  noFill();
-  strokeWeight(5);
+  p.stroke(clr, 225);
+  p.noFill();
+  p.strokeWeight(5);
 
-  beginShape();
-  curveVertex(ts[0], ts[1]);
+  p.beginShape();
+  p.curveVertex(ts[0], ts[1]);
 
   for (let i=2; i<(ts.length - 2); i++) {
-    bezierVertex(ts[i+2], ts[i+3], ts[i+4], ts[i+5], ts[i+6], ts[i+7]);
+    p.bezierVertex(ts[i+2], ts[i+3], ts[i+4], ts[i+5], ts[i+6], ts[i+7]);
   }
 
-  curveVertex(ts[ts.lenght-2], ts[ts.lenght-2]);
-  endShape();
+  p.curveVertex(ts[ts.lenght-2], ts[ts.lenght-2]);
+  p.endShape();
 }
 
 function tween_string(os, ns) {
