@@ -33,7 +33,7 @@ let sketch2 = (p) => {
 }
 
 function generatePrice(time) {
-  return basePrice + p.height * floor((noise(time * 0.08) - 0.5) * 100) * 0.012;
+  return basePrice + p.height * p.floor((p.noise(time * 0.08) - 0.5) * 100) * 0.012;
 }
 
 function updateData(newPrice) {
@@ -166,7 +166,7 @@ function draw_predict(t, xx) {
 function draw_lob(last_t, last_p, second_last_p) {
   p.strokeWeight(5);
   p.strokeCap(SQUARE);
-  const order_guess = floor(random(-20, 20));
+  const order_guess = p.floor(random(-20, 20));
   lob.push(last_p + order_guess * 5);
   if (lob.length > max_lob) lob.shift();
 

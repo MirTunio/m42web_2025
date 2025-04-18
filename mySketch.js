@@ -35,22 +35,22 @@ let sketch1 = (p) => {
     p.frameRate(60);
     string_1 = get_new_string(num_points, 123123123, 0.0);
     s2 = get_new_string(num_points, 456456456, 0.0);
-    p.noiseSeed("thisisalawoflife");
+    p.p.noiseSeed("thisisalawoflife");
     p.textFont(loaded_font);
   };
 
   p.draw = function() {
-  cursec = floor(new Date().getTime() / 1000);
+  cursec = p.floor(new Date().getTime() / 1000);
 
   if (cursec > oldsec) {
     trigger_time = true;
   }
 
   if (trigger_time) {
-    newbg_r = 255 * noise(cursec);
-    newbg_g = 255 * noise(cursec + 9000);
-    newbg_b = 255 * noise(cursec + 18000);
-    line_seed = 98989678908989 * noise(cursec);
+    newbg_r = 255 * p.noise(cursec);
+    newbg_g = 255 * p.noise(cursec + 9000);
+    newbg_b = 255 * p.noise(cursec + 18000);
+    line_seed = 98989678908989 * p.noise(cursec);
     new_string_1 = get_new_string(num_points, 123123123, 1.3); // 1.0
     ns2 = get_new_string(num_points, 456456456, 1.3); // 1.0
     trigger_time = false;
@@ -74,7 +74,7 @@ let sketch1 = (p) => {
   draw_string(s2, 0);
 
   // time step
-  tprime += 100 * noise(cursec);
+  tprime += 100 * p.noise(cursec);
 
   // print time
   p.textStyle(BOLD);
@@ -99,24 +99,24 @@ function get_new_string(num_points, disp, mult) {
   hadj = (hh-p.height)/2;
 
   // starting vertex
-  tx = ww * noise(rd + line_seed + -1 * 100) - wadj;
-  ty =  hh * noise(rd + line_seed + 10 + -1 * 100) - hadj;
+  tx = ww * p.noise(rd + line_seed + -1 * 100) - wadj;
+  ty =  hh * p.noise(rd + line_seed + 10 + -1 * 100) - hadj;
   out_string.push(tx); // 0
   out_string.push(ty);  // 1 // (0,1) starting coordinates
   let c = 0;
   for (let i=0; i < num_points; i++) {
-    sx = ww * noise(rd + line_seed + 20 + (i-1) * 100) - wadj;
-    sy = hh * noise(rd + line_seed + 30 + (i-1) * 100) - hadj;
-    fx =  ww * noise(rd + line_seed + 40 + (i+1) * 100) - wadj;
-    fy =  hh * noise(rd + line_seed + 50 + (i+1) * 100) - hadj;
-    x3 =  ww * noise(rd + line_seed + 60 + i * 100) - wadj;
-    y3 =  hh * noise(rd + line_seed + 70 + i * 100) - hadj;
+    sx = ww * p.noise(rd + line_seed + 20 + (i-1) * 100) - wadj;
+    sy = hh * p.noise(rd + line_seed + 30 + (i-1) * 100) - hadj;
+    fx =  ww * p.noise(rd + line_seed + 40 + (i+1) * 100) - wadj;
+    fy =  hh * p.noise(rd + line_seed + 50 + (i+1) * 100) - hadj;
+    x3 =  ww * p.noise(rd + line_seed + 60 + i * 100) - wadj;
+    y3 =  hh * p.noise(rd + line_seed + 70 + i * 100) - hadj;
     out_string.push(sx, sy, fx, fy, x3, y3); // i + 2, 3, 4, 5, 6, 7
     c+=1;
   }
   // ending vertex
-  ex = ww * noise(rd + line_seed + 80 + (c+1) * 100) - wadj;
-  ey = hh * noise(rd + line_seed + 90 + (c+1) * 100) - hadj;
+  ex = ww * p.noise(rd + line_seed + 80 + (c+1) * 100) - wadj;
+  ey = hh * p.noise(rd + line_seed + 90 + (c+1) * 100) - hadj;
   out_string.push(ex, ey);
 
   return out_string;
