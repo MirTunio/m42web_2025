@@ -19,7 +19,7 @@ let sketch2 = (p) => {
   p.background(255);
   price = generatePrice(t);
 
-  if (frameCount % 2 === 0) {
+  if (p.frameCount % 2 === 0) {
     updateData(price);
   }
 

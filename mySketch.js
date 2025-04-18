@@ -35,7 +35,7 @@ let sketch1 = (p) => {
     p.frameRate(60);
     string_1 = get_new_string(num_points, 123123123, 0.0);
     s2 = get_new_string(num_points, 456456456, 0.0);
-    p.p.noiseSeed("thisisalawoflife");
+    p.noiseSeed("thisisalawoflife");
     p.textFont(loaded_font);
   };
 
