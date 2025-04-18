@@ -18,7 +18,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 300);
+  let cnv = createCanvas(600, 300);
+  cnv.parent('p5-container-2');
   frameRate(25);
   strokeWeight(1.5);
   textFont(loaded_font);
