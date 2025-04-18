@@ -165,7 +165,7 @@ function draw_predict(t, xx) {
 
 function draw_lob(last_t, last_p, second_last_p) {
   p.strokeWeight(5);
-  p.strokeCap(SQUARE);
+  p.strokeCap(p.SQUARE);
   const order_guess = p.floor(random(-20, 20));
   lob.push(last_p + order_guess * 5);
   if (lob.length > max_lob) lob.shift();
@@ -181,7 +181,7 @@ function draw_lob(last_t, last_p, second_last_p) {
 
 function just_draw_lob(t_lob, last_t, last_p, second_last_p) {
   p.strokeWeight(5);
-  p.strokeCap(SQUARE);
+  p.strokeCap(p.SQUARE);
   const [lower, upper] = [min(last_p, second_last_p) - 5, max(last_p, second_last_p) + 5];
 
   for (let p of t_lob.filter(p => p < lower || p > upper)) {

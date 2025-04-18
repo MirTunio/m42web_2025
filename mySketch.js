@@ -77,7 +77,7 @@ let sketch1 = (p) => {
   tprime += 100 * p.noise(cursec);
 
   // print time
-  p.textStyle(BOLD);
+  p.textStyle(p.BOLD);
   current_time = get_current_time();
   //show_full = format_time(get_full_time(current_time, 0), false); // just time
   show_full = format_time(get_full_time(current_time, 0), true); //  actually full date
