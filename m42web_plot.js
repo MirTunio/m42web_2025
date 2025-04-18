@@ -110,8 +110,8 @@ function drawGrid(data) {
 
 function drawLabels(data, len, y_move, spread, upper, lower) {
   const raw_price = data[len - 1];
-  const price_str = nf(100 + raw_price / 100, 1, 2);
-  const spread_str = nf(spread, 1, 2);
+  const price_str = p.nf(100 + raw_price / 100, 1, 2);
+  const spread_str = p.nf(spread, 1, 2);
   const pred_y = draw_predict(t, (len - 1) * 10);
 
   p.textSize(16);
@@ -132,7 +132,7 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
   drawCurlyBracket((len - 1) * 10 + 5, upper, lower, 'right');
 
   // pred
-  const pred_str = nf(100 + pred_y / 100, 1, 2); //nf(100 + pred_y / 100, 1, 2);
+  const pred_str = p.nf(100 + pred_y / 100, 1, 2); //p.nf(100 + pred_y / 100, 1, 2);
   pred_tween = ( 3 * pred_y + y_move) / 4 ;
   
   p.textSize(16);
@@ -166,7 +166,7 @@ function draw_predict(t, xx) {
 function draw_lob(last_t, last_p, second_last_p) {
   p.strokeWeight(5);
   p.strokeCap(p.SQUARE);
-  const order_guess = p.floor(random(-20, 20));
+  const order_guess = p.floor(p.random(-20, 20));
   lob.push(last_p + order_guess * 5);
   if (lob.length > max_lob) lob.shift();
 

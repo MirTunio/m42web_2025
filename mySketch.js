@@ -155,9 +155,9 @@ function format_time(full_time, yearsetc) {
     monthnow = now.getMonth() + 1;
     daynow = now.getDate();
     msnow = now.getMilliseconds();
-    return `${nf(yearnow, 2)}:${nf(monthnow, 2)}:${nf(daynow, 2)}:${nf(hoursInDay, 2)}:${nf(minutesInHour, 2)}:${nf(secondsInMinute, 2)}:${nf(msnow, 3)}`;
+    return `${p.nf(yearnow, 2)}:${p.nf(monthnow, 2)}:${p.nf(daynow, 2)}:${p.nf(hoursInDay, 2)}:${p.nf(minutesInHour, 2)}:${p.nf(secondsInMinute, 2)}:${p.nf(msnow, 3)}`;
   } else {
-    return `${nf(hoursInDay, 2)}:${nf(minutesInHour, 2)}:${nf(secondsInMinute, 2)}`;
+    return `${p.nf(hoursInDay, 2)}:${p.nf(minutesInHour, 2)}:${p.nf(secondsInMinute, 2)}`;
   }
 }
 
