@@ -85,7 +85,7 @@ let sketch1 = (p) => {
   p.noStroke();
   p.textSize(p.width / 13);
   p.fill(0);
-  p.textAlign(CENTER, BOTTOM);
+  p.textAlign(p.CENTER, p.BOTTOM);
   p.text(show_full, p.width/2, p.height-8);
 }
 
