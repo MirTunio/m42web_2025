@@ -14,43 +14,32 @@
 // Because every moment is unique and ephermal
 // The 24 7 365 cycle is only a stubbornly persistant illusion
 
+let sketch1 = (p) => {
+  let newbg_r = 0, newbg_g = 0, newbg_b = 0;
+  let bg_r = 0, bg_g = 0, bg_b = 0;
+  let tprime = 0, oldsec = 0, trigger_time = false;
+  let line_seed = 0;
+  let new_string_1 = [], string_1 = [], ns2 = [], s2 = [], ns3 = [], s3 = [];
+  let num_points = 1;
+  let loaded_font;
 
-let newbg_r = 0;
-let newbg_g = 0;
-let newbg_b = 0;
-let bg_r = 0;
-let bg_g = 0;
-let bg_b = 0;
-let tprime = 0;
-let oldsec = 0;
-let trigger_time = false;
-let line_seed = 0;
-let new_string_1= [];
-let string_1 = [];
-let ns2 = [];
-let s2 = [];
-let ns3 =[];
-let s3 = [];
-let num_points = 1; // on bezier vertexes not include start and end
-p5.disableFriendlyErrors = true;
+  p.disableFriendlyErrors = true;
 
-function preload() {
-  loaded_font = loadFont("hasubi.ttf"); // hasubi pit_thin
-}
+  p.preload = function() {
+    loaded_font = p.loadFont("hasubi.ttf");
+  };
 
-function setup() {
-  let cnv = createCanvas(250, 250);
-  cnv.parent('p5-container'); 
-  background(0);
-  frameRate(60);
-  string_1 = get_new_string(num_points, 123123123, 0.0);
-  s2 = get_new_string(num_points, 456456456, 0.0);
-  noiseSeed("thisisalawoflife");
-  textFont(loaded_font);
-}
+  p.setup = function() {
+    let cnv = p.createCanvas(250, 250);
+    cnv.parent('p5-container');
+    p.frameRate(60);
+    string_1 = get_new_string(num_points, 123123123, 0.0);
+    s2 = get_new_string(num_points, 456456456, 0.0);
+    p.noiseSeed("thisisalawoflife");
+    p.textFont(loaded_font);
+  };
 
-
-function draw() {
+  p.draw = function() {
   cursec = floor(new Date().getTime() / 1000);
 
   if (cursec > oldsec) {
@@ -188,3 +177,8 @@ function get_current_time() {
   return currentTime;
 }
 
+
+
+};
+
+new p5(sketch1);

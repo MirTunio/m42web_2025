@@ -1,31 +1,21 @@
-/*
-NOTES:
-  write down the meanings of numbers
-  pred is not working
-  labels improve
-  reconsider font
- */
+let sketch2 = (p) => {
+  let prices = [], lob_hist = [], lob = [];
+  const max_lob = 40, max_lob_hist = 50, maxPoints = 50, basePrice = 100;
+  let t = 0, price = basePrice, loaded_font;
 
+  p.preload = function() {
+    loaded_font = p.loadFont("hasubi.ttf");
+  };
 
-let prices = [];
-lob_hist = [];
-lob = [];
-const max_lob = 40, max_lob_hist = 50, maxPoints = 50, basePrice = 100;
-let t = 0, price = basePrice, loaded_font;
+  p.setup = function() {
+    let cnv = p.createCanvas(600, 300);
+    cnv.parent('p5-container-2');
+    p.frameRate(25);
+    p.strokeWeight(1.5);
+    p.textFont(loaded_font);
+  };
 
-function preload() {
-  loaded_font = loadFont("hasubi.ttf");
-}
-
-function setup() {
-  let cnv = createCanvas(600, 300);
-  cnv.parent('p5-container-2');
-  frameRate(25);
-  strokeWeight(1.5);
-  textFont(loaded_font);
-}
-
-function draw() {
+  p.draw = function() {
   background(255);
   price = generatePrice(t);
 
@@ -235,3 +225,9 @@ function drawCurlyBracket(x, yTop, yBottom, side = 'left') {
          x, yBottom);
   endShape();
 }
+
+
+  // Define all helper functions here, replacing all global p5 calls with p prefixed versions
+};
+
+new p5(sketch2);
