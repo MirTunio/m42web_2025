@@ -12,6 +12,7 @@ Mach 42 is a research-driven trading technology firm, founded in 2019 to tackle 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
     <script src="m42web_plot.js"></script>
 </div>
+<br>
 
 
 ## What We Do

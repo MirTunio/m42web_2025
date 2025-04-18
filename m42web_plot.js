@@ -1,6 +1,6 @@
 let sketch2 = (p) => {
   let prices = [], lob_hist = [], lob = [];
-  const max_lob = 40, max_lob_hist = 50, maxPoints = 50, basePrice = 100;
+  const max_lob = 40, max_lob_hist = 50, maxPoints = 40, basePrice = 100;
   let t = 0, price = basePrice, loaded_font;
 
   p.preload = function() {
@@ -8,7 +8,7 @@ let sketch2 = (p) => {
   };
 
   p.setup = function() {
-    let cnv = p.createCanvas(600, 300);
+    let cnv = p.createCanvas(500, 300);
     cnv.parent('p5-container-2');
     p.frameRate(25);
     p.strokeWeight(1.5);
