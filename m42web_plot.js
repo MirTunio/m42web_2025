@@ -205,7 +205,7 @@ function get_spread(target, arr) {
     }
   }
 
-  return [abs(closestAbove / 100 - closestBelow / 100), closestAbove, closestBelow];
+  return [p.abs(closestAbove / 100 - closestBelow / 100), closestAbove, closestBelow];
 }
 
 function movingAverage(arr, len) {
@@ -219,11 +219,11 @@ function drawCurlyBracket(x, yTop, yBottom, side = 'left') {
   let third = h / 3;
   let dir = side === 'left' ? -1 : 1;
 
-  bezier(x, yTop,
+  p.bezier(x, yTop,
          x + dir * w, yTop,
          x + dir * w, yBottom,
          x, yBottom);
-  endShape();
+  p.endShape();
 }
 
 
