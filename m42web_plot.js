@@ -1,6 +1,6 @@
 let sketch2 = (p) => {
   let prices = [], lob_hist = [], lob = [];
-  const max_lob = 40, max_lob_hist = 50, maxPoints = 40, basePrice = 100;
+  const max_lob = 40, max_lob_hist = 40, maxPoints = 40, basePrice = 100;
   let t = 0, price = basePrice, loaded_font;
 
   p.preload = function() {
