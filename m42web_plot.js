@@ -170,7 +170,7 @@ function draw_lob(last_t, last_p, second_last_p) {
   lob.push(last_p + order_guess * 5);
   if (lob.length > max_lob) lob.shift();
 
-  const [lower, upper] = [min(last_p, second_last_p) - 5, max(last_p, second_last_p) + 5];
+  const [lower, upper] = [p.min(last_p, second_last_p) - 5, p.max(last_p, second_last_p) + 5];
   lob = lob.filter(p => p < lower || p > upper);
 
   for (let p of lob) {
@@ -182,7 +182,7 @@ function draw_lob(last_t, last_p, second_last_p) {
 function just_draw_lob(t_lob, last_t, last_p, second_last_p) {
   p.strokeWeight(5);
   p.strokeCap(p.SQUARE);
-  const [lower, upper] = [min(last_p, second_last_p) - 5, max(last_p, second_last_p) + 5];
+  const [lower, upper] = [p.min(last_p, second_last_p) - 5, p.max(last_p, second_last_p) + 5];
 
   for (let p of t_lob.filter(p => p < lower || p > upper)) {
     p.stroke(p < last_p ? color(0, 85, 0, 120) : color(85, 0, 0, 120));
