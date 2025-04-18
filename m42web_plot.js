@@ -173,10 +173,10 @@ function draw_lob(last_t, last_p, second_last_p) {
   const [lower, upper] = [p.min(last_p, second_last_p) - 5, p.max(last_p, second_last_p) + 5];
   lob = lob.filter(p => p < lower || p > upper);
 
-  for (let p of lob) {
-    p.stroke(p < last_p ? p.color(0, 85, 0, 120) : p.color(85, 0, 0, 120));
-    p.line(last_t - 20, p, last_t - 10, p);
-  }
+  for (let pt of lob) {
+    p.stroke(pt < last_p ? p.color(0, 85, 0, 120) : p.color(85, 0, 0, 120));
+    p.line(last_t - 20, pt, last_t - 10, pt);
+}
 }
 
 function just_draw_lob(t_lob, last_t, last_p, second_last_p) {
@@ -184,10 +184,10 @@ function just_draw_lob(t_lob, last_t, last_p, second_last_p) {
   p.strokeCap(p.SQUARE);
   const [lower, upper] = [p.min(last_p, second_last_p) - 5, p.max(last_p, second_last_p) + 5];
 
-  for (let p of t_lob.filter(p => p < lower || p > upper)) {
-    p.stroke(p < last_p ? p.color(0, 85, 0, 120) : p.color(85, 0, 0, 120));
-    p.line(last_t - 20, p, last_t - 10, p);
-  }
+  for (let pt of t_lob.filter(pt => pt < lower || pt > upper)) {
+    p.stroke(pt < last_p ? p.color(0, 85, 0, 120) : p.color(85, 0, 0, 120));
+    p.line(last_t - 20, pt, last_t - 10, pt);
+}
 }
 
 function get_spread(target, arr) {
