@@ -19,6 +19,7 @@ let sketch2 = (p) => {
 
     let N = p.floor((p.width - 150) / 10);
     let max_lob = N, max_lob_hist = N, maxPoints = N, basePrice = 100;
+    p.print(max_lob, max_lob_hist, maxPoints);
 
   };
 
