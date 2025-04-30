@@ -17,7 +17,7 @@ let sketch2 = (p) => {
     p.strokeWeight(1.5);
     p.textFont(loaded_font);
 
-    let N = p.floor((p.width - 150) / 10);
+    let N = p.floor((p.width - 50) / 10);
     max_lob = N;
     max_lob_hist = N;
     maxPoints = N;
