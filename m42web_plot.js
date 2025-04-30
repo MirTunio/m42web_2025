@@ -1,6 +1,6 @@
 let sketch2 = (p) => {
   let prices = [], lob_hist = [], lob = [];
-  const max_lob = 40, max_lob_hist = 40, maxPoints = 40, basePrice = 100;
+  const max_lob = 40, max_lob_hist = 40, maxPoints = 20, basePrice = 100;
   let t = 0, price = basePrice, loaded_font;
 
   p.preload = function() {
@@ -19,20 +19,20 @@ let sketch2 = (p) => {
   };
 
   p.draw = function() {
-  p.background(255);
-  price = generatePrice(t);
+    p.background(255);
+    price = generatePrice(t);
 
-  if (p.frameCount % 2 === 0) {
-    updateData(price);
-  }
+    if (p.frameCount % 2 === 0) {
+      updateData(price);
+    }
 
-  p.push();
-  p.translate(0, movingAverage(prices, 10));
-  drawChart(prices);
-  p.pop();
+    p.push();
+    p.translate(0, movingAverage(prices, 10));
+    drawChart(prices);
+    p.pop();
 
-  drawFraming();
-  t++;
+    drawFraming();
+    t++;
 }
 
 function generatePrice(time) {
