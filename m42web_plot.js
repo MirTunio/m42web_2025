@@ -122,7 +122,10 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
   const raw_price = data[len - 1];
   const price_str = p.nf(100 + raw_price / 100, 1, 2);
   const spread_str = p.nf(spread, 1, 2);
-  const pred_y = draw_predict(t, (len - 1) * 10);
+  // const pred_y = draw_predict(t, (len - 1) * 10);
+  const pred = draw_predict(t, (len - 1) * 10);
+  const pred_y = pred[0];
+  const pred_y_draw = pred[1];
 
   p.textSize(16);
   p.strokeWeight(0.5);
@@ -149,7 +152,7 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
   p.strokeWeight(0.5);
   p.stroke(209, 128, 12);
   p.fill(209, 128, 12);
-  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y_draw - 6);
   p.text(pred_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 40);
   
   //line((len - 1) * 10 + 45, -y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
@@ -170,7 +173,7 @@ function draw_predict(t, xx) {
   p.noStroke();
   p.fill(209, 128, 12);
   p.text("<", x, y);
-  return y;
+  return [y_p, y];
 }
 
 function draw_lob(last_t, last_p, second_last_p) {
