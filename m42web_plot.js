@@ -1,6 +1,6 @@
 let sketch2 = (p) => {
   let prices = [], lob_hist = [], lob = [];
-  const max_lob = 21, max_lob_hist = 21, maxPoints = 21, basePrice = 100;
+  let max_lob = 21, max_lob_hist = 21, maxPoints = 21, basePrice = 100;
   let t = 0, price = basePrice, loaded_font;
 
   p.preload = function() {
@@ -16,6 +16,10 @@ let sketch2 = (p) => {
     p.frameRate(25);
     p.strokeWeight(1.5);
     p.textFont(loaded_font);
+
+    let N = floor((p.width - 150) / 10);
+    let max_lob = N, max_lob_hist = N, maxPoints = N, basePrice = 100;
+
   };
 
   p.draw = function() {
