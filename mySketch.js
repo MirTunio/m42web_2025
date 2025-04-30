@@ -32,6 +32,8 @@ let sketch1 = (p) => {
   p.setup = function() {
     let cnv = p.createCanvas(250, 250);
     cnv.parent('p5-container');
+    cnv.style('display', 'block');
+    cnv.style('margin', '0 auto');
     p.frameRate(60);
     string_1 = get_new_string(num_points, 123123123, 0.0);
     s2 = get_new_string(num_points, 456456456, 0.0);
