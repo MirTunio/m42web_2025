@@ -31,7 +31,7 @@ The next phase for Mach 42 involves refining and validating our algorithms, stre
 
 Through research, iteration, and responsible deployment we ensure that our systems and strategies are not only profitable but also contribute positively to the full spectrum of market participants, from institutions to retail investors.
 
-<div id="p5-container" style="width: 100%; height: auto; margin: 0 auto;">
+<div id="p5-container" style="width: 100%; max-width: 800px; height: auto; margin: 0 auto;">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <script src="mySketch.js"></script>
 </div>
