@@ -18,7 +18,9 @@ let sketch2 = (p) => {
     p.textFont(loaded_font);
 
     let N = p.floor((p.width - 150) / 10);
-    let max_lob = N, max_lob_hist = N, maxPoints = N, basePrice = 100;
+    max_lob = N;
+    max_lob_hist = N;
+    maxPoints = N;
     p.print(max_lob, max_lob_hist, maxPoints);
 
   };
