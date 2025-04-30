@@ -8,7 +8,10 @@ let sketch2 = (p) => {
   };
 
   p.setup = function() {
-    let cnv = p.createCanvas(500, 300);
+    let containerWidth = document.getElementById('p5-container-2').offsetWidth;
+    let containerHeight = containerWidth * 0.60;
+    let cnv = p.createCanvas(containerWidth, 300);
+    // let cnv = p.createCanvas(500, 300);
     cnv.parent('p5-container-2');
     p.frameRate(25);
     p.strokeWeight(1.5);
