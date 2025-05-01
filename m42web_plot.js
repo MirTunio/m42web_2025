@@ -152,7 +152,7 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
   p.strokeWeight(0.5);
   p.stroke(209, 128, 12);
   p.fill(209, 128, 12);
-  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y_draw - 6);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 40, (len - 1) * 10 + 9, pred_y_draw);
   p.text(pred_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 40);
   
   //line((len - 1) * 10 + 45, -y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
