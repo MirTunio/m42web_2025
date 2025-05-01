@@ -169,11 +169,38 @@ function draw_predict(t, xx) {
   const y = -y_p + p.height / 2;
   const x = xx + 6;
 
+  // main pred marker
   p.textSize(24);
   p.noStroke();
   p.fill(209, 128, 12);
-  p.text("<", x, y);
+  p.text("<", x, y+7.5);
+
+  // conf interval
+  const stdDev = weightedStdDev(y_preds)
+  p.fill(209, 128, 12, 60);
+  p.line(x, y+stdDev, x+10, y+stdDev);
+  p.line(x, y-stdDev, x+10, y-stdDev);
+  p.rect(x, y-stdDev, 10, 2 * stdDev);
+
   return [y_p, y];
+}
+
+function weightedStdDev(arr, decay = 0.9) {
+  const n = arr.length;
+  const weights = Array.from({ length: n }, (_, i) => Math.pow(decay, i));
+  const weightSum = weights.reduce((a, b) => a + b, 0);
+
+  // Weighted mean
+  const weightedMean = arr.reduce((sum, val, i) => sum + val * weights[i], 0) / weightSum;
+
+  // Weighted variance
+  const weightedVariance = arr.reduce(
+    (sum, val, i) => sum + weights[i] * Math.pow(val - weightedMean, 2),
+    0
+  ) / weightSum;
+
+  const weightedStdDev = Math.sqrt(weightedVariance);
+  return weightedStdDev;
 }
 
 function draw_lob(last_t, last_p, second_last_p) {
