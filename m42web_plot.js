@@ -127,24 +127,42 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
   const pred_y = pred[0];
   const pred_y_draw = pred[1];
 
+  // last price
+  let lp_gap = 20;
   p.textSize(16);
   p.strokeWeight(0.5);
   p.stroke(50);
   p.fill(50);
   price_y_move = movingAverage(prices, 8);
-  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 - 10, (len - 1) * 10 + 5, -raw_price + p.height / 2);
-  p.text(price_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 - 10);
+  // p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 - 10    , (len - 1) * 10 + 5, -raw_price + p.height / 2);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 - lp_gap, (len - 1) * 10 + 5, -raw_price + p.height / 2);
+  // p.text(price_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 - 10);
+  p.text(price_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 - lp_gap);
+  p.textSize(9);
+  p.noStroke();
+  p.text("LAST PRICE", (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 10 - lp_gap);
 
+
+  // spread
+  let s_gap = 15;
   p.textSize(16);
   p.strokeWeight(0.5);
   p.stroke(0, 0, 180);
   p.fill(0, 0, 180);
-  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 15, (len - 1) * 10 + 13, (lower + upper) / 2);
-  p.text(spread_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 15);
+  // p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 15   , (len - 1) * 10 + 13, (lower + upper) / 2);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + s_gap, (len - 1) * 10 + 13, (lower + upper) / 2);
+  // p.text(spread_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 15);
+  p.text(spread_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + s_gap);
   p.noFill();
+  p.stroke(0, 0, 180);
   drawCurlyBracket((len - 1) * 10 + 5, upper, lower, 'right');
+  p.textSize(9);
+  p.noStroke();
+  p.fill(0, 0, 180);
+  p.text("SPREAD", (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 10 + s_gap);
 
   // pred
+  let p_gap = 50;
   const pred_str = p.nf(100 + pred_y / 100, 1, 2); //p.nf(100 + pred_y / 100, 1, 2);
   pred_tween = ( 3 * pred_y + y_move) / 4 ;
   
@@ -152,14 +170,15 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
   p.strokeWeight(0.5);
   p.stroke(209, 128, 12);
   p.fill(209, 128, 12);
-  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 40, (len - 1) * 10 + 9, pred_y_draw);
-  p.text(pred_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 40);
+  // p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + 40   , (len - 1) * 10 + 9, pred_y_draw);
+  p.line((len - 1) * 10 + 45, -price_y_move + p.height / 2 + p_gap, (len - 1) * 10 + 9, pred_y_draw);
+  // p.text(pred_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 40);
+  p.text(pred_str, (len - 1) * 10 + 50, -price_y_move + p.height / 2 + p_gap);
   
-  //line((len - 1) * 10 + 45, -y_move + p.height / 2 + 40, (len - 1) * 10 + 12, pred_y - 6);
-  //text(pred_str, (len - 1) * 10 + 50, -y_move + p.height / 2 + 40);
-  
-  //line((len - 1) * 10 + 45, pred_tween - 6, (len - 1) * 10 + 12, pred_y - 6);
-  //text(pred_str, (len - 1) * 10 + 50, pred_tween - 6); //-y_move + p.height / 2 + 40);
+  p.textSize(9);
+  p.noStroke();
+  p.fill(209, 128, 12);
+  p.text("PREDICTION", (len - 1) * 10 + 50, -price_y_move + p.height / 2 + 10 + p_gap);
 }
 
 function draw_predict(t, xx) {
