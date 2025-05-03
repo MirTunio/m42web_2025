@@ -37,8 +37,15 @@ let sketch2 = (p) => {
     p.translate(0, movingAverage(prices, 10));
     drawChart(prices);
     p.pop();
+ 
+    // SIMULATION LABEL
+    p.fill(70);
+    p.textSize(10);
+    p.noStroke();
+    p.text("[SIMULATION]", width - 70, height - 10);
 
     drawFraming();
+
     t++;
 }
 
@@ -183,7 +190,14 @@ function drawLabels(data, len, y_move, spread, upper, lower) {
 
 function draw_predict(t, xx) {
   const pred_len = 20;
-  const y_preds = Array.from({ length: pred_len }, (_, i) => generatePrice(t + i));
+  //const y_preds = Array.from({ length: pred_len }, (_, i) => generatePrice(t + i));
+  const offset = 0; // t%20;
+  const y_preds = [];
+  for (let i = 0; i < pred_len; i++) {
+    const generatedPrice = generatePrice(t + i - offset);
+    y_preds.push(generatedPrice);
+  }
+
   const y_p = movingAverage(y_preds, pred_len);
   const y = -y_p + p.height / 2;
   const x = xx + 6;
