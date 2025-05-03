@@ -42,7 +42,7 @@ let sketch2 = (p) => {
     p.fill(70);
     p.textSize(10);
     p.noStroke();
-    p.text("[SIMULATION]", width - 70, height - 10);
+    p.text("[SIMULATION]", p.width - 70, p.height - 10);
 
     drawFraming();
 
