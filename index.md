@@ -47,5 +47,5 @@ Through research, iteration, and responsible deployment we ensure that our syste
 
 Whether you're on the sell-side or buy-side, or a driven individual looking to work with us, we’re eager to explore opportunities together.
 
-[> connect with M42 <](./connect.html)
+Email: [`info@machfortytwo.com`](mailto:info@machfortytwo.com)
 
