@@ -27,7 +27,7 @@ We are currently optimizing strategies designed to:
 - **Provide execution solutions** that help optimize execution during periods of insufficient liquidity and excess volatility.
 - **Simplify market-making** for designated liquidity providers, enabling tighter spreads, better quotes, while optimizing capital efficiency and inventory management.
 
-The next phase for Mach 42 involves refining and validating our algorithms, stress-testing our systems in live market conditions, creating strategic partnerships and obtaining the necessary licensing to expand our capabilities. In the future, alongside trading our proprietary strategies, we aim to offer order execution services and serve as major liquidity provider in the markets we operate in.
+The next phase for Mach 42 involves refining and validating our algorithms, stress-testing our systems in live market conditions, creating strategic partnerships and obtaining the necessary licensing to expand our capabilities. In the future, alongside trading our proprietary strategies, we aim to offer order execution services and serve as major liquidity provider in the markets we operate in. 
 
 Through research, iteration, and responsible deployment we ensure that our systems and strategies are not only profitable but also contribute positively to the full spectrum of market participants, from institutions to retail investors.
 
